@@ -7,10 +7,10 @@ def password_gen():
   pass_chars = 0
 
   random_list = []
-  x = input('How many characters should your password be?')
-  x = int(x)
+  x = input('How many characters should your password be?') #Allows user to select length of their password.
+  x = int(x) # Converts to int as input will always be registered as string, will cause ValueError if not changed.
 
-  while pass_chars <x:
+  while pass_chars <x: #Follows user input to create the correct length of password.
     random_char = random.choice(chars)
     random_specs = random.choice(spec_chars)
     random_i = random.randint(0,9)
