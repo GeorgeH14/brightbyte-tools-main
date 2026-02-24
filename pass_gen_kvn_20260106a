@@ -1,0 +1,33 @@
+# Password Generator
+# Ver 001a  20260106a
+import random
+import string
+
+def passwrd_gen(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+
+    if length <= 0:
+        return "Error: Password length must be a positive number."
+
+    password = ''.join(random.choice(characters) for i in range(length))
+
+    return password
+
+if __name__ == "__main__":
+
+    print(f"{'_' * 30}Password Generator{'_' * 30}")
+
+    while True:
+        try:
+            length_pwd = int(input("Enter the length of password: "))
+
+            my_pwd = passwrd_gen(length_pwd)
+
+            print(f"\n Password: {my_pwd}")
+
+            break
+
+        except ValueError:
+            print("Invalid input. Please enter a whole number.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
