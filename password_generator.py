@@ -1,5 +1,5 @@
 #Simple password generator
-# New feature that now uses cli
+# New feature that now uses cli arguments
 import random
 import sys
 
